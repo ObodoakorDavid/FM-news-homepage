@@ -1,0 +1,142 @@
+/** @format */
+
+main {
+  max-width: 768px;
+  margin: 0 auto;
+  /* overflow-x: hidden; */
+}
+
+body {
+  
+  overflow-x: hidden;
+}
+
+nav {
+  padding: 30px 30px;
+  max-width: 768px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+ 
+}
+
+nav ul {
+  list-style: none;
+  /* display: flex;
+  justify-content: space-between;
+  display: none; */
+}
+
+nav ul {
+  position: absolute;
+  top: 0;
+  right: -70%;
+  height: 100vh;
+  width: 50vw;
+  background-color: white;
+  color: black;
+  transition: 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+  padding-top: 100px;
+  padding-left: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul.active {
+  right: 0;
+
+}
+
+
+
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+}
+
+.hamburger span {
+  height: 4px;
+  width: 50px;
+  background-color: black;
+  transition: 0.4s ease-in-out;
+}
+
+.bar1.active {
+  transform: rotate(40deg);
+  position: absolute;
+  top: 0;
+}
+.bar2.active {
+  opacity: 0;
+}
+.bar3.active {
+  transform: rotate(-38deg);
+  position: absolute;
+  top: 0;
+}
+
+/* ============================== Section1 ======================  */
+
+.bg_image {
+  /* min-height: 300px;
+    width: 100%;
+    background-image: url('./assets/images/image-web-3-mobile.jpg');
+    background-repeat: no-repeat;
+    background-size: contain; */
+}
+
+.bg_image > img {
+  width: 100%;
+}
+
+button {
+  background-color: red;
+  color: white;
+  padding: 16px 32px;
+  border: none;
+}
+
+/* ============================= Section2 =========================  */
+
+.section2 {
+  background-color: black;
+  color: white;
+  padding: 10px 30px;
+  margin-top: 30px;
+}
+
+.section2 > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ==================== Media Query =================  */
+
+@media (min-width: 600px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+  }
+  .section2 {
+    margin-top: 0;
+  }
+  .section3 {
+    display: flex;
+    gap: 40px;
+  }
+  .bright {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+  }
+}
