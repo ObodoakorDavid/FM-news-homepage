@@ -1,43 +1,48 @@
 /** @format */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 main {
-  max-width: 768px;
+  width: 90%;
+  max-width: 900px;
   margin: 0 auto;
   /* overflow-x: hidden; */
+  transition: 0.4s ease-in-out;
+}
+
+main.active,
+.logo.active {
+  filter: blur(2px);
 }
 
 body {
-  
   overflow-x: hidden;
 }
 
 nav {
-  padding: 30px 30px;
-  max-width: 768px;
+  padding: 30px 0;
+  width: 90%;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
- 
 }
 
 nav ul {
   list-style: none;
-  /* display: flex;
-  justify-content: space-between;
-  display: none; */
-}
-
-nav ul {
-  position: absolute;
+  position: fixed;
   top: 0;
-  right: -70%;
+  right: -1%;
   height: 100vh;
   width: 50vw;
   background-color: white;
   color: black;
-  transition: 0.4s ease-in-out;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -46,21 +51,23 @@ nav ul {
   padding-left: 20px;
   font-size: 1.5rem;
   font-weight: bold;
+  transition: 0.4s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: right;
+  z-index: 5;
 }
 
 nav ul.active {
-  right: 0;
-
+  transform: scaleX(1);
 }
-
-
-
 
 .hamburger {
   display: flex;
   flex-direction: column;
   gap: 5px;
   position: relative;
+  right: 5%;
+  z-index: 6;
 }
 
 .hamburger span {
@@ -82,6 +89,30 @@ nav ul.active {
   transform: rotate(-38deg);
   position: absolute;
   top: 0;
+}
+
+@media (min-width: 820px) {
+  .hamburger {
+    display: none;
+  }
+
+  nav ul {
+    position: relative;
+    transform: scaleX(1);
+    flex-direction: row;
+    padding: 0;
+    right: unset;
+    height: unset;
+    width: 60%;
+    font-weight: normal;
+    gap: 0;
+    justify-content: space-between;
+    font-size: 1.1rem;
+  }
+
+  nav {
+    padding: 40px 0;
+  }
 }
 
 /* ============================== Section1 ======================  */
