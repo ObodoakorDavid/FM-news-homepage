@@ -13,5 +13,18 @@ hamburger.addEventListener("click", () => {
   ul.classList.toggle("active");
   main.classList.toggle("active");
   logo.classList.toggle("active");
-  console.log(ul.classList);
+  // console.log(ul.classList);
 });
+
+window.onscroll = () => {
+  console.log(scrollY);
+  if (scrollY > 0 && ul.classList.contains("active")) {
+    hamburger.classList.remove("absolute");
+    hamburger.classList.add("fixed");
+    console.log("aaa");
+  } else {
+    hamburger.classList.remove("fixed");
+    hamburger.classList.add("absolute");
+    console.log("aaah");
+  }
+};

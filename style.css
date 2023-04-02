@@ -19,8 +19,10 @@
 
 main {
   width: 90%;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
+  display: grid;
+  gap: 30px;
   /* overflow-x: hidden; */
   transition: 0.4s ease-in-out;
 }
@@ -38,7 +40,7 @@ body {
 nav {
   padding: 30px 0;
   width: 90%;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -77,9 +79,19 @@ nav ul.active {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  position: relative;
-  right: 0%;
+  position: fixed;
+  right: 5%;
   z-index: 6;
+}
+
+.hamburger.fixed {
+  position: fixed;
+  right: 5%;
+}
+
+.hamburger.absolute {
+  position: absolute;
+  right: 0;
 }
 
 .hamburger span {
@@ -129,12 +141,10 @@ nav ul.active {
 
 /* ============================== Section1 ======================  */
 
-.bg_image {
-  /* min-height: 300px;
-    width: 100%;
-    background-image: url('./assets/images/image-web-3-mobile.jpg');
-    background-repeat: no-repeat;
-    background-size: contain; */
+.section1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
 }
 
 .bg_image > img {
@@ -142,30 +152,39 @@ nav ul.active {
 }
 
 button {
-  background-color: red;
+  background-color: var(--soft-red);
+  margin-top: 20px;
   color: white;
   padding: 16px 32px;
   border: none;
 }
+.bright {
+  display: grid;
+  gap: 10px;
+}
 
 .bright h1 {
-  font-size: 1.9rem;
-  padding: 14px 0;
+  font-size: 2.5rem;
   font-weight: bolder;
 }
 
 .bright p {
-  color: var(--dark-grayish-blue);
+  color: var(--grayish-blue);
   font-weight: bold;
 }
 
 /* ============================= Section2 =========================  */
 
 .section2 {
-  background-color: black;
+  background-color: var(--very-dark-blue);
   color: white;
   padding: 10px 30px;
   margin-top: 30px;
+}
+
+.section2 h2 {
+  color: var(--soft-orange);
+  padding: 20px 0;
 }
 
 .section2 > div {
@@ -174,12 +193,61 @@ button {
   gap: 20px;
 }
 
+.section2 div div {
+  padding: 20px 0;
+}
+.section2 div div:not(:last-child) {
+  border-bottom: 1px solid var(--grayish-blue);
+  padding: 20px 0;
+}
+
+/* ============================= Section3 =========================  */
+
+.section3 {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.section3 img {
+  height: 100%;
+  width: 40%;
+  max-width: 200px;
+}
+
+.section3 > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+.section3 div div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section3 h2 {
+  color: var(--grayish-blue);
+  font-size: 2.1rem;
+}
+
+.section3 h3 {
+  color: var(--very-dark-blue);
+  font-weight: bolder;
+}
+
+.section3 p {
+  color: var(--grayish-blue);
+}
+
 /* ==================== Media Query =================  */
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .grid-container {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2.2fr 1fr;
     gap: 20px;
   }
   .section2 {
@@ -191,6 +259,18 @@ button {
   }
   .bright {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .section3 {
+    flex-direction: row;
+  }
+  .section3 div div {
+    gap: 10px;
+  }
+
+  .bg_image > img {
+    min-height: 300px;
+    max-height: 300px;
   }
 }
